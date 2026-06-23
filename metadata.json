@@ -1,0 +1,8 @@
+{
+  "name": "Catálogo Ferracini Manauara",
+  "description": "Catálogo exclusivo de produtos da marca Ferracini, focado em estilo, conforto e sofisticação.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
