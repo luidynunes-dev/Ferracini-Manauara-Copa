@@ -112,7 +112,7 @@ export default function App() {
 
               {/* CARD SHOWCASE CAROUSEL */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
-                {products.map((product) => (
+                {products.slice(0, 4).map((product) => (
                   <button 
                     key={product.id}
                     onClick={() => {
@@ -135,28 +135,6 @@ export default function App() {
                     </div>
                   </button>
                 ))}
-
-                {/* VISUAL PRESENTATION PLACEHOLDERS FOR TEST (Representing future inventory cleanly) */}
-                <div className="relative w-full aspect-square bg-[#222] rounded-2xl overflow-hidden flex flex-col items-center justify-center border border-neutral-800 p-4">
-                  <div className="text-neutral-600 text-xs font-mono font-bold tracking-widest text-center uppercase">
-                    EM BREVE
-                  </div>
-                  <span className="text-[10px] text-neutral-500 mt-1">Novo Modelo</span>
-                </div>
-
-                <div className="relative w-full aspect-square bg-[#222] rounded-2xl overflow-hidden flex flex-col items-center justify-center border border-neutral-800 p-4">
-                  <div className="text-neutral-600 text-xs font-mono font-bold tracking-widest text-center uppercase">
-                    EM BREVE
-                  </div>
-                  <span className="text-[10px] text-neutral-500 mt-1">Novo Modelo</span>
-                </div>
-
-                <div className="relative w-full aspect-square bg-[#222] rounded-2xl overflow-hidden flex flex-col items-center justify-center border border-neutral-800 p-4">
-                  <div className="text-neutral-600 text-xs font-mono font-bold tracking-widest text-center uppercase">
-                    EM BREVE
-                  </div>
-                  <span className="text-[10px] text-neutral-500 mt-1">Novo Modelo</span>
-                </div>
               </div>
             </div>
           </div>
@@ -236,11 +214,11 @@ export default function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {filteredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-3xl overflow-hidden border border-neutral-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col">
-                <div className="aspect-square bg-neutral-100 relative overflow-hidden border-b border-neutral-105-0 p-4 flex items-center justify-center">
+                <div className="aspect-square bg-neutral-100 relative overflow-hidden border-b border-neutral-200/60 flex items-center justify-center">
                   <img 
                     src={product.image} 
                     alt={product.name} 
-                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 rounded-2xl"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                   {product.isNew && (
