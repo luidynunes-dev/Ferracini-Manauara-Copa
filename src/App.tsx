@@ -189,7 +189,7 @@ export default function App() {
             </button>
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-neutral-900 flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-amber-600 animate-pulse" />
-              Curadoria Ferracini de Testes
+              Catálogo Ferracini
             </h2>
           </div>
 
