@@ -36,9 +36,9 @@ export default function App() {
       />
 
       {/* HEADER */}
-      <header className="py-6 px-4 max-w-5xl mx-auto grid grid-cols-3 items-center">
-        <div className="justify-self-start">
-          {view === 'catalog' ? (
+      <header className="py-6 px-4 max-w-5xl mx-auto flex items-center justify-between relative min-h-[72px]">
+        <div className="w-20 flex justify-start z-10">
+          {view === 'catalog' && (
             <button 
               onClick={() => navigateTo('home')}
               className="flex items-center gap-1.5 text-xs text-neutral-600 hover:text-neutral-950 font-bold uppercase tracking-wider transition-colors bg-white/60 hover:bg-white px-3 py-1.5 rounded-full border border-neutral-300/60 shadow-xs"
@@ -46,14 +46,15 @@ export default function App() {
               <ArrowLeft className="w-3.5 h-3.5" />
               Início
             </button>
-          ) : (
-            <div className="hidden sm:block"></div>
           )}
         </div>
         
         {/* CENTERED BRAND LOGO */}
-        <div className="justify-self-center col-span-2 sm:col-span-1">
-          <button onClick={() => navigateTo('home')} className="flex items-center gap-1 group">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <button 
+            onClick={() => navigateTo('home')} 
+            className="flex items-center gap-1 group pointer-events-auto"
+          >
             <span className="font-serif tracking-[0.2em] text-2xl font-black uppercase text-neutral-950 group-hover:text-amber-900 transition-colors">
               FERRACINI
             </span>
@@ -61,16 +62,8 @@ export default function App() {
           </button>
         </div>
 
-        {/* RIGHT ACTION STATUS */}
-        <div className="justify-self-end">
-          <button 
-            onClick={() => navigateTo('catalog')}
-            className="flex items-center gap-1.5 bg-white px-4 py-2 rounded-full text-xs font-bold border border-neutral-200/80 shadow-[0_2px_6px_rgba(0,0,0,0.03)] hover:border-neutral-350 hover:bg-neutral-50 transition-all text-neutral-800"
-          >
-            <span className="text-emerald-500 text-sm leading-none">💚</span>
-            Coleção 2026
-          </button>
-        </div>
+        {/* RIGHT SPACER FOR BALANCE */}
+        <div className="w-20 z-10" />
       </header>
 
       {/* DYNAMIC VIEW */}
